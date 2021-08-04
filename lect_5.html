@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate deleniti
+    molestias mollitia pariatur porro saepe! Dolorem eaque earum eligendi, iste maxime molestias quam vitae.
+    Dolore hic in quae sed.
+</p>
+
+<div id="rules" class="fc bp">
+    Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе. Второе правило Бойцовского
+    клуба: никогда никому не рассказывать о Бойцовском клубе. Третье правило Бойцовского клуба: в схватке
+    участвуют только двое. Четвертое правило Бойцовского клуба: не более одного поединка за один раз
+</div>
+
+<ul>
+    <li class="fc_rules rule1">Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</li>
+    <li class="fc_rules rule2">Второе правило Бойцовского
+        клуба: никогда никому не рассказывать о Бойцовском клубе
+    </li>
+    <li class="fc_rules rule3">Третье правило Бойцовского клуба: в схватке
+        участвуют только двое.
+    </li>
+    <li class="fc_rules rule4">Четвертое правило Бойцовского клуба: не более одного поединка за один раз</li>
+</ul>
+
+
+<script>
+
+    // - Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+    // -- отримує текст з параграфа з id "content"
+
+    let pContent = document.getElementById('content');
+    console.log(pContent);
+
+    // -- отримує текст з блоку з id "rules"
+
+    let divRules = document.getElementById('rules');
+    console.log(divRules);
+
+    // -- замініть текст параграфа з id 'content' на будь-який інший
+
+    pContent.innerText = 'Приключенческий фэнтези фильм «Гарри Поттер и узник Азкабана» продолжает рассказывать о приключениях Гарри Поттера и его друзей. Они уже перешли на третий курс Хогвартской школы магии. Как и прошлые годы, Гарри был вынужден проводить летние каникулы у своих опекунов – семейства Дурслей. Они всегда не особо ладили, но на этот раз все зашло намного дальше, и в порыве гнева герой применил магию, что категорически запрещено за пределами школы.';
+
+    // -- замініть текст параграфа з id 'rules' на будь-який інший
+
+    divRules.innerText = 'После произошедшего Гарри уходит из дома, и в скором времени встречается с Роном и Гермионой. Однако друзья не успевают насладиться радостью встречи, ведь им сообщают, что из тюрьмы сбежал приспешник и слуга Волан-де-Морта – Сириус Блэк. Блэк является крестным Гарри, и когда-то давно он был хорошим другом его родителей. Но после событий, когда они погибли, его признали предателем и заточили в Азкабан. Но теперь, когда Сириус на свободе, все всерьез обеспокоены за жизнь Гарри.';
+
+    // -- змініть кожному елементу колір фону на червоний
+
+    let all = document.querySelectorAll('body > *');
+    // let all = document.body.getElementsByTagName('*')
+    console.log(all)
+
+    for (let back of all) {
+        back.style.background = 'pink';
+        console.log(back);
+    }
+
+
+    // -- змініть кожному елементу колір тексту на синій
+
+
+    for (let text of all) {
+        text.style.color = 'blue';
+        console.log(text);
+    }
+
+    // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
+
+    console.log(divRules.classList);
+
+    // -- отримати всі елементи з класом fc_rules. визначити їм 2 події "клік", одна вивдоить текст елементу, інша довільний ьексь
+
+    let classElements = document.getElementsByClassName('fc_rules');
+
+    for (let fc of classElements) {
+        fc.addEventListener( 'click', () => {
+            console.log(fc.innerText);
+        } );
+        fc.addEventListener( 'click', () => {
+            console.log('Це буде довільний текст...');
+        } );
+    }
+    console.log(classElements)
+
+    // -- поміняти колір тексту у всіх елементів fc_rules на червоний
+
+    for (let fc of classElements) {
+        fc.style.color = 'red';
+    }
+
+
+
+</script>
+</body>
+</html>
